@@ -81,7 +81,7 @@ We can also find the probability of a Welsh baby having a birth weight of 3.5 kg
 ```{r plot2}
 plot_norm(mean = 3.39, sd = 0.55, shadeValues = 3.5, 
           direction = "greater", 
-          col.shade = "pink")
+          col.shade = "peachpuff")
 ```
 
 There are two ways we can deal with the fact that we're now shading "up" (to the right):
