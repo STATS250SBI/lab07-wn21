@@ -1,0 +1,141 @@
+---
+title: "STATS 250 Lab 7 Report"
+author: "YOUR NAME GOES HERE IN QUOTES"
+date: "TODAY'S DATE GOES HERE IN QUOTES"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    theme: lumen
+    css: assets/styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("plot_norm.R") # This imports the shuffle_two_groups() function
+set.seed(51021) # Note setting the seed!!
+```
+
+# Instructions
+
+Welcome to Lab 7! Complete the following exercises designed to help you understand the simulation process for making inference about a population proportion. It is important that you keep your answers inside the ".answer" blocks. Do NOT delete the three colon blocks (:::) and keep your responses between them. Use the tutorial for help, and feel free to ask questions on Piazza or email your lab instructor.
+
+Depending on your instruction method (synchronous or asynchronous), complete the following exercises collaboratively.
+
+1. **Synchronous remote:** Work with your peers in breakout rooms during the synchronous lab.
+1. **Asynchronous remote:** Use Piazza for asynchronous collaboration.
+
+**Collaborators:** If applicable, replace this text with the names of anyone you collaborated with on this project.
+
+**NOTE:** If you perform a calculation in R and assign it a name but do not print the value in your knitted document, we reserve the right to deduct points.
+
+# Background
+
+:::{.background}
+A popular uprising that started on January 25, 2011 in Egypt led to the 2011 Egyptian Revolution. Polls show that about 69% of American adults followed the news about the political crisis and demonstrations in Egypt closely during the first couple weeks following the start of the uprising. Among a random sample of 35 high school students, it was found that only 20 of them followed the news about Egypt closely during this time.^[https://news.gallup.com/poll/146003/americans-views-egypt-sharply-negative.aspx]
+:::
+
+# Lab Assignment
+
+## Question 1
+:::{.question}
+Write the hypotheses for testing whether the proportion of high school students who closely followed the news about Egypt is different from the 69% reported value for American adults. Use words and symbols.
+:::
+
+:::{.answer}
+
+- $H_0:$ *replace this text with your null hypothesis*
+- $H_A:$ *replace this text with your alternative hypothesis*
+
+:::
+
+## Question 2
+:::{.question}
+Let's set up a simulation to test our hypotheses. Create a vector called `bagOfChips` that consists of appropriate numbers of `"blue"` and `"yellow"` chips. `bagOfChips` should contain 100 elements in total.
+:::
+
+:::{.answer}
+```{r question2, error = T}
+# Replace this comment with code required for Question 2. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 3
+:::{.question}
+Use the `sample()` and `replicate()` functions to run the simulation 1000 times. Make sure to save your results by assigning them a name. Revisit Lab 5 if you need a refresher on the code!
+:::
+
+:::{.answer}
+```{r question3, error = T}
+# Replace this comment with code required for Question 3. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 4
+:::{.question}
+Plot your simulation results in a histogram, and draw vertical line(s) to help visualize the p-value.
+:::
+
+:::{.answer}
+```{r question4, error = T}
+# Replace this comment with code required for Question 4. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 5
+:::{.question}
+Using your simulation results, compute the p-value for the hypotheses you wrote in Question 1. Make sure your answer shows up in your knitted document.
+:::
+
+:::{.answer}
+```{r question5, error = T}
+# Replace this comment with code required for Question 5. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 6
+:::{.question}
+Assuming that the null hypothesis is true, we can say that the simulated $\hat{p}$ values will approximately follow a N(0.69, 0.0782) distribution.
+
+Using this distribution, find the probability of observing a value of $\hat{p}$ between 0.5 and 0.75. Include an appropriate visualization using `plot_norm()`.
+:::
+
+:::{.answer}
+```{r question6, error = T}
+# Replace this comment with code required for Question 6. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 7
+:::{.question}
+Assuming that the null hypothesis is true, we can say that the simulated $\hat{p}$ values will approximately follow a N(0.69, 0.0782) distribution.
+
+Find the 95% quantile of this distribution (i.e., the number such that 95% of the distribution is to the left). Include an appropriate visualization using `plot_norm()`.
+:::
+
+:::{.answer}
+```{r question7, error = T}
+# Replace this comment with code required for Question 7. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::
+
+## Question 8
+:::{.question}
+Assuming that the null hypothesis is true, we can say that the simulated $\hat{p}$ values will approximately follow a N(0.69, 0.0782) distribution.
+
+Use this distribution to approximate the p-value for your hypothesis test. Include an appropriate visualization using `plot_norm()`.
+:::
+
+:::{.answer}
+```{r question8, error = T}
+# Replace this comment with code required for Question 8. (Remember that this text is a comment, so R ignores it; you can delete it if you want.)
+
+```
+:::

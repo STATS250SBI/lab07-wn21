@@ -111,3 +111,25 @@ Here, we need to find the probability by using `pnorm()` twice -- first to find 
 pnorm(q = 3.5, mean = 3.39, sd = 0.55) - pnorm(q = 3, mean = 3.39, sd = 0.55)
 ```
 
+
+## Normal Quantiles
+
+Quantiles are cut points of a distribution that divides the distribution into equal areas. For example, the median divides a distribution into 2 equal AREAS, and quartiles divide a distribution into 4 equal AREAS.
+
+The `q` argument in `pnorm()` stands for `q`uantile. `pnorm()` gives us the area to the left (if `lower.tail = TRUE`) of `q`. Given a number `p` between 0 and 1, we can use `qnorm()` to find the quantile `q` that will have `p` area to the left or right of that number. We say that `q` is the "`p`th quantile of the N($\mu$, $\sigma$) distribution".
+
+We saw above that the area to the left of 3.0 in a N(3.39, 0.55) distribution is 0.239. Let's use this to demonstrate the use of `qnorm()`:
+
+```{r, qnormLeft}
+qnorm(p = 0.239, mean = 3.39, sd = 0.55)
+```
+
+So we can see that `qnorm()` is the opposite of `pnorm`, in the way that division is the opposite of multiplication: one undoes the other. 
+
+We can also use `lower.tail = FALSE` inside `qnorm()` to find the (1-`p`)th quantile (the number such that there is 1-`p` area to the left and `p` area to the right):
+
+```{r, qnormRight}
+qnorm(p = 0.421, mean = 3.39, sd = 0.55, lower.tail = FALSE)
+```
+
+**NOTE**: you can't use `1-qnorm(p)` instead of setting `lower.tail = FALSE` since the normal distribution extends to all real numbers (negative infinity to positive infinity). 
