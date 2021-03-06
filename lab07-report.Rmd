@@ -139,3 +139,27 @@ Use this distribution to approximate the p-value for your hypothesis test. Inclu
 
 ```
 :::
+
+# Wrap-Up and Submission
+
+At the top of the document, make sure you've changed the `author` field to your name (in quotes!). If you'd like, change the date as well.
+
+When you've finished the lab, click the **Knit** button one last time.
+
+## Submission instructions
+
+### If you're using RStudio Cloud
+
+1.  In the Files pane, check the box next to `lab07-report.html`.
+2.  Click More \> Export...
+3.  Click Download and save the file on your computer in a folder you'll remember and be able to find later. You can just call the file `lab07-report.html` or whatever else you'd like (as long as you remember what you called it).
+
+### If you're using RStudio installed on your computer
+
+1.  locate the `lab07-report.html` file on your computer. The file will be saved in the location indicated at the top of the files pane.
+
+### Submission to Canvas
+
+1.  Click the "Assignments" panel on the left side of the page. Scroll to find "Lab 7", and open the assignment. Click "Submit Assignment".
+2.  Towards the bottom of the page, you'll be able to choose `lab07-report.html` from the folder you saved it in from RStudio Cloud or noted if you're using RStudio Desktop. **You will only be able to upload a .html file -- do not upload any other file type.**
+3.  Click "Submit Assignment". You're done!

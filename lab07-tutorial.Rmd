@@ -21,13 +21,18 @@ source("plot_norm.R")
 # Learning Objectives
 
 ## Statistical Learning Objectives
-**DO THIS**
+1. Understand how area under the normal curve relates to probability
+1. Understand how to move between probabilities and quantiles of the normal distribution
+1. Build intuition for the relationship between simulated p-values and p-values which arise from a normal approximation.
 
 ## R Learning Objectives
-**DO THIS**
+1. Understand `pnorm()` and `qnorm()`
+1. Revisit simulation for one proportion
 
 ## Functions covered in this lab
-**DO THIS**
+1. `plot_norm()` (note this is not a standard R function)
+1. `pnorm()`
+1. `qnorm()`
 
 # Weekly Advice
 You'll probably find it useful to revisit lab 5 to help with this week's report!
@@ -111,6 +116,20 @@ Here, we need to find the probability by using `pnorm()` twice -- first to find 
 pnorm(q = 3.5, mean = 3.39, sd = 0.55) - pnorm(q = 3, mean = 3.39, sd = 0.55)
 ```
 
+Let's demonstrate the last direction we can use in `plot_norm()`: `direction = "beyond"`. Say we want to find the probability that a Welsh baby is born weighing *EITHER* less than 3 kg *OR* more than 4 kg.
+
+```{r plot4}
+plot_norm(mean = 3.39, sd = 0.55, 
+          shadeValues = c(3, 4), 
+          direction = "beyond", 
+          col.shade = "maroon2")
+```
+
+To find this probability, we'll just add up the area in each tail:
+
+```{r beyondProb}
+pnorm(q = 3, mean = 3.39, sd = 0.55) + pnorm(4, mean = 3.39, sd = 0.55, lower.tail = FALSE)
+```
 
 ## Normal Quantiles
 
@@ -133,3 +152,27 @@ qnorm(p = 0.421, mean = 3.39, sd = 0.55, lower.tail = FALSE)
 ```
 
 **NOTE**: you can't use `1-qnorm(p)` instead of setting `lower.tail = FALSE` since the normal distribution extends to all real numbers (negative infinity to positive infinity). 
+
+# Code Cheat Sheet
+
+## `pnorm(q, mean = 0, sd = 1, lower.tail = TRUE)`
+- **`q`** refers to the value you want to find the area above or below
+  - `pnorm(q, 0, 1)` gives $P(Z < q)$ where $Z$ is $N(0,1)$
+- **`mean`** refers to $\mu$, defaults to 0
+- **`sd`** refers to $\sigma$, defaults to 1
+- **`lower.tail`** controls which direction to "shade": `lower.tail = TRUE` goes less than `q`, `lower.tail = FALSE` goes greater than `q`; defaults to `TRUE`
+
+## `qnorm(p, mean = 0, sd = 1, lower.tail = TRUE)`
+- **`p`** refers to the area under the curve
+  - `qnorm(p, 0, 1)` is the number such that the area to the left of it is `p`
+- **`mean`** refers to $\mu$, defaults to 0
+- **`sd`** refers to $\sigma$, defaults to 1
+- **`lower.tail`** controls which direction to "shade": `lower.tail = TRUE` goes less than `q`, `lower.tail = FALSE` goes greater than `q`; defaults to `TRUE`
+
+## `plot_norm(mean = 0, sd = 1, shadeValues, direction, col.shade, ...)`
+- **`mean`** refers to $\mu$, defaults to 0
+- **`sd`** refers to $\sigma$, defaults to 1
+- **`shadeValues`** is a vector of up to 2 numbers that define the region you want to shade
+- **`direction`** can be one of `less`, `greater`, `between`, or `beyond`, and controls the direction of shading between `shadeValues`. Must be `less` or `greater` if `shadeValues` has only one element; `between` or `beyond` if two
+- **`col.shade`** controls the color of the shaded region, defaults to `"cornflowerblue"`
+- **`...`** lets you specify other graphical parameters to control the appearance of the normal curve (e.g., `lwd`, `lty`, `col`, etc.)
