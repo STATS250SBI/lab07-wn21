@@ -69,7 +69,7 @@ To make this diagram, we're using a function we built for you called `plotNorm()
 - `mean`: the mean of the normal distribution you'd like to draw ($\mu$)
 - `sd`: the standard deviation of the normal distribution you'd like to draw ($\sigma$)
 - `shadeValues` (optional): either a number or a vector of two numbers (using `c()`) that are the boundaries of the region you'd like to shade.
-- `direction`: where to shade (`"less"`, `"greater"`, `"inside"`, or `"outside"`)
+- `direction`: where to shade (`"less"`, `"greater"`, `"between"`, or `"beyond"`)
 - `col.shade`: the color to use when shading
 - any other graphical parameters you want to use to control the appearance of the plot (like `main`, etc.)
 
