@@ -13,6 +13,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+if (!("checkmate" %in% installed.packages()))
+  install.packages('checkmate')
 source("plot_norm.R") # This imports the shuffle_two_groups() function
 set.seed(51021) # Note setting the seed!!
 ```
